@@ -1,0 +1,17 @@
+mat-form-field {
+  width: 100%;
+}
+
+mat-spinner {
+  margin: auto;
+}
+#matbutton {
+  width: 100%;
+  }
+
+  #flex { display: flex; }
+  #a { order: 1; height: 10%;}
+  #b { order: 2; }
+  #c { order: 3; }
+  #d { order: 4; }
+  

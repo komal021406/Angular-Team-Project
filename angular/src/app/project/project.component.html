@@ -1,0 +1,89 @@
+
+<div class="container-fluid">
+<link rel="stylesheet" href="https://bootswatch.com/4/journal/bootstrap.min.css">
+<div class="pull-right" >
+  <select >
+    <option value="project1">Project 1</option>
+    <option value="project2">Project 2</option>
+    <option value="project3">Project 3</option>
+  </select>
+</div>
+<!-- <mat-select [(ngModel)]="project"  placeholder="project" >
+    <mat-option *ngFor="let proj of projectselect" [value] = proj>
+      {{proj}}
+    </mat-option>
+</mat-select>
+<p>{{projcet}}</p> -->
+
+  <div class="row">
+      <!--Resource catalog -->
+      <div col="col-md-6" style="width:50%">
+      <div style="display: block; color:white; background-color:darkgrey; height:5%; text-align:center;">
+        Resource Catalog 
+      <!---------------------Select button------------------------>>
+        <button class="glyphicon glyphicon-tasks btn-success pull-right" style="color:orange; height: 10pt">
+            <mat-checkbox (change)="$event ? masterToggle() : null"
+            [checked]="selection.hasValue() && isAllSelected()"
+            [indeterminate]="selection.hasValue() && !isAllSelected()">
+            </mat-checkbox> 
+        </button>
+        <!---------------------Export button------------------------>>
+
+        <button class="pull-right" style="color:orange; height: 10pt"
+        (click)="exportProjects()">
+        </button>
+
+      </div>
+
+      <table style="width:100%;" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          <!----------------------------check column-------------------->
+          <ng-container matColumnDef="select">
+              <th mat-header-cell *matHeaderCellDef>
+                
+              </th>
+              <td mat-cell *matCellDef="let row">
+                <mat-checkbox (click)="$event.stopPropagation()"
+                              (change)="$event ? selection.toggle(row) : null"
+                              [checked]="selection.isSelected(row)">
+                </mat-checkbox>
+              </td>
+          </ng-container>
+          
+
+          <!---------------------------Name column----------------------->
+
+          <ng-container matColumnDef="name">
+              <th style="text-align:center;" mat-header-cell *matHeaderCellDef> PROJECT NAME </th>
+              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+          
+            
+          <!---------------------------CODE column----------------------->
+
+          <ng-container matColumnDef="code">
+              <th style="text-align:center;" mat-header-cell *matHeaderCellDef> PROJECT CODE </th>
+              <td mat-cell *matCellDef="let element"> {{element.code}} </td>
+          </ng-container>
+         
+          <tr style="background-color:rgb(238, 232, 232); height: 15%;" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)"></tr>
+          </table>
+        </div>
+  
+
+
+
+
+      <!--Project table -->
+
+    <div class="col-md-6" style="width: 50%">
+      <app-proj-table [projTitle] = projTitle></app-proj-table>
+    </div>
+
+  </div>
+
+
+
+<button type="submit" (click) = Onsubmit($event)></button>
+
+</div>

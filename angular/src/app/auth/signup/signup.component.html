@@ -1,0 +1,19 @@
+<mat-card style="width: 40%; height:81%; margin-left: 30%; margin-top: 4%;">
+    <mat-card-title style="color:rgb(255, 72, 0);">Signup</mat-card-title>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <form (submit)="onSignup(signupForm)" #signupForm="ngForm" *ngIf="!isLoading">
+       
+      <mat-form-field>
+        <input matInput name="email" ngModel type="email" placeholder="E-Mail" #emailInput="ngModel" required email>
+        <mat-error *ngIf="emailInput.invalid">Please enter a valid email.</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="password" name="password" ngModel matInput placeholder="Password" #passwordInput="ngModel" required>
+        <mat-error *ngIf="passwordInput.invalid">Please enter a valid password.</mat-error>
+      </mat-form-field>
+      <div><button mat-raised-button color="warn" type="submit" *ngIf="!isLoading">Signup</button></div>
+      <div><button style="float:right;" routerLink = "/auth/login" mat-raised-button type="submit" *ngIf="!isLoading">Login</button></div>
+    </form>
+  </mat-card>
+  <!--  the backend port is 5000(py)-->
+  

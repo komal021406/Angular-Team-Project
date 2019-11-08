@@ -1,0 +1,41 @@
+<div id="flex">
+  <div id="a">
+    <mat-form-field style="float:right; padding-top: 5%;">
+      <mat-select [(ngModel)]="project" (ngModelChange)="porjectChanged($event)" placeholder="project" >
+        <mat-option *ngFor="let proj of projectselect" [value] = proj>
+          {{proj}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <!-- <div>{{project}}</div> -->
+  </div>
+<div id="b" style="display: block; color:white; background-color:darkgrey; height:20%; text-align:justify;">QUANTITY SUVEY</div>
+  <table id="c" style="width:100%;" mat-table [dataSource]="projectDataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="NAME">
+      <th style="text-align:center;" mat-header-cell *matHeaderCellDef> NAME </th>
+      <td matInput mat-cell *matCellDef="let element"> {{element.data[0].name}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="COST_CODE">
+      <th style="text-align:center;" mat-header-cell *matHeaderCellDef> COST_CODE </th>
+      <td mat-cell *matCellDef="let element"> <input type="text" matInput [value]="element.data[0].code" [(ngModel)]="element.data[0].code"></td>
+    </ng-container>
+  
+    <ng-container matColumnDef="EDITABLE">
+      <th style="text-align:center;" mat-header-cell *matHeaderCellDef> EDITABLE </th>
+      <td mat-cell *matCellDef="let element"><input matInput [value]="element.data[0].code" [(ngModel)]="element.data[0].code"> </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="ITEM_ID">
+      <th style="text-align:center;" mat-header-cell *matHeaderCellDef> ITEM_ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.data[0]._id}} </td>
+    </ng-container>
+  
+    <tr style="background-color:rgb(238, 232, 232); height: 15%;" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table><br>
+  
+<mat-paginator id='e' [pageSizeOptions]="[5,10,20]" showFirstLastButtons></mat-paginator>
+<div id="d"><span routerLink = "/Template" style="float:left; color:blue;">Edit Quantity Survey Template</span><button mat-button style="float:right; color: coral;">Submit</button></div>
+
+</div>

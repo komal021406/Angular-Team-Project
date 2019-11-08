@@ -1,0 +1,20 @@
+<mat-card style="display: flex; flex-direction: column;  width: 36%; height:80%; margin-left: 30%; margin-top: 4%;">
+<mat-card-title style="color:rgb(255, 72, 0);">Login <i style="float:right; font-size: 36px;" class="material-icons">lock</i></mat-card-title>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <form (submit)="onLogin(loginForm)" #loginForm="ngForm" *ngIf="!isLoading">
+      <mat-form-field>
+        <input matInput name="email" ngModel type="email" placeholder="Username" #emailInput="ngModel" required email>
+        <mat-error *ngIf="emailInput.invalid">Please enter a valid email.</mat-error>
+      </mat-form-field>
+      <mat-form-field> 
+        <input type="password" name="password" ngModel matInput placeholder="Password" #passwordInput="ngModel" required>
+        <mat-error *ngIf="passwordInput.invalid">Please enter a valid password.</mat-error>
+      </mat-form-field>
+      <button id="matbutton" mat-raised-button color="warn" type="submit" *ngIf="!isLoading">Login</button>
+    </form>
+    <div><mat-checkbox style="float: left;">Remember Me</mat-checkbox></div>
+    <div style="width:100%;"><button style="float: left; width:10%; margin-left:0%;" routerLink = "/auth/signup" mat-raised-button color="warn" type="submit">Signup</button><p style="float: right;">Forget Password?</p></div>
+</mat-card>
+
+  
+  

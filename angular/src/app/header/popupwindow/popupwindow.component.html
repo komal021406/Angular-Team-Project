@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>{{username}}</h2>
+
+<div>
+  <p style="text-align:center">Member since</p><br>
+  <p style="text-align:center" mat-dialog-content>{{userday}}</p>
+</div>
+
+<div mat-dialog-action>
+  <button class="mat-raised-button"(click)="close()">Close</button>
+  <button class="mat-raised-button mat-primary"(click)="save()">Save</button>
+</div>

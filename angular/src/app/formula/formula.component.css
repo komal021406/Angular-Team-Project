@@ -1,0 +1,14 @@
+#flex { display: flex; flex-direction: column; width:100%;}
+#a { order: 1; height: 10%;}
+#b { order: 2; }
+#c { order: 3; }
+#d { order: 5; margin-bottom: 0%;}
+#e { order: 4}
+
+td hover {
+    background-color: #ffa;
+  }
+
+input[type=text]:focus{
+outline: 2px solid rgba(190, 126, 7, 0.596);
+}

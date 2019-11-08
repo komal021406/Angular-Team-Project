@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    
+
+</head>
+
+<body>
+
+
+
+  <div class="container"><div class="row">
+    <div class="col"><table   class="table table-hover table-bordered" id="scope">
+    <thead>
+      <tr class="table-dark">
+        <td scope="col" colspan="2" >Project Scope Fields</td>
+      </tr>
+    </thead>
+      <tbody>
+      <tr class="table-light">
+        <th scope="row">name</th>
+        <td><input type="checkbox"></td>
+      </tr>
+      <tr class="table-dark">
+        <th scope="row">cost_code</th>
+        <td><input type="checkbox"></td>
+      </tr>
+      <tr class="table-light">
+          <th scope="row">editable</th>
+          <td><input type="checkbox"></td>
+    </tr>
+    <tr class="table-dark">
+            <th scope="row">item_id</th>
+            <td><input type="checkbox"></td>
+     </tr>
+</tbody>
+  </table>
+</div>  
+
+
+  <div class="col"><table class="table table-hover table-bordered" id="quantity" >
+      <thead>
+          <tr class="table-dark">
+            <td scope="col" colspan="4" >Quantity Survey Fields</td>
+          </tr>
+    </thead>
+    <tbody>
+      <tr class="table-light" >
+        <th>
+          <label>Field</label><br><input type="text" placeholder="quantity">
+        </th>
+        <td><label>Type</label><br>
+          <select>
+            <option value="number">number</option>
+            <option value="text">text</option>
+            <option value="formula">formula</option>
+          </select>
+        </td>
+        <td></td>
+        <td>
+           <button class="far fa-trash-alt" id="btnDelete" style="position: absolute;"></button>
+        </td>
+      </tr><!--  first row of quantity survey table-->
+      <tr class="table-dark" >
+        <th>
+          <label>Field</label><br><input type="text" placeholder="price">
+        </th>
+        <td><label>Type</label><br>
+          <select>
+            <option value="number">number</option>
+            <option value="text">text</option>
+            <option value="formula">formula</option>
+          </select>
+        </td>
+        <td></td>
+        <td>
+          <button class="far fa-trash-alt" id="btnDelete" style="position: absolute;"></button>
+        </td>
+      </tr> <!--  second row of quantity survey table-->
+
+      <tr class="table-light" >
+        <th>
+          <label>Field</label><br><input type="text" placeholder="total price">
+        </th>
+        <td><label>Type</label><br>
+          <select >
+            <option value="formula">formula</option>
+            <option value="number">number</option>
+            <option value="text">text</option>
+            
+          </select>
+        </td>
+        <td> <label>Formula</label><br><input type="text" placeholder="price*quantity"></td>
+        <td>
+          <button  class="far fa-trash-alt" id="btnDelete" ></button></td>
+      </tr>
+      
+    </tbody>
+
+
+
+  </table>
+  <button style="float:right">Add Field</button>
+
+</div>
+</div>
+
+  
+
+<div class="row" id ="empty" > <div class="col">
+  <button id="save">Save
+  </button> </div> </div>
+  </div>
+  
+  <script>
+      $('#quantity').on('click', '#btnDelete',function(){
+        console.log('run');
+        $(this).closest('tr').remove();
+      });
+    </script>
+</body>
+<style>
+
+.row{
+  border: solid
+}
+#save{
+  float:right;
+  background-color: orange
+}
+#empty{
+  height: 100px;
+}
+.far fa-trash-alt{
+  background-color: orange
+}
+</style>
+
+</html>

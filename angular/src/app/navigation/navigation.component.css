@@ -1,0 +1,50 @@
+/* .example-container {
+  width: 400px;
+  height: 200px;
+  margin: 10px;
+  border: 1px solid #555;
+} */
+
+   .example-container {
+    position: relative;
+    top:0;
+    left:0;
+    bottom:0;
+    height: 80vh;
+    border: 1px solid #555;} 
+
+    .menuheadTab{
+      height:25px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size-adjust: 0.58;
+      color:white;
+      
+    }
+  .example-sidenav{
+    position:absolute;
+    height:83.25vh;
+    background-color:black;
+    min-width:50px ;
+    width:16vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size-adjust: 0.58;
+    
+  }
+  .leftArrowClass{
+    float: left;
+    position: fixed;
+    color:white;
+    font-size:25px;
+    cursor:pointer;
+    background-color: black;
+   
+  } 
+
+  .main-contentClass{
+    border:1px solid white;
+    display: inline-block;
+     width: 99%;
+     height: 75vh;
+     padding:16px;
+  }
+ 

@@ -1,0 +1,22 @@
+<mat-toolbar style="background-color:#FFFFFF;">
+  <mat-toolbar-row style="padding-left: 0%;">
+    <div style="height:100%; color: #FFFFFF; background-color:#F57C00; font-size:13.5px; width: 16.4%;"><i style="font-size: 36px; padding-top: 8%" class="material-icons">dashboard</i><span style="padding-bottom:80%;">Resource Management</span></div>
+    <span style="text-align:center;" class="example-spacer">{{project}}</span>
+    <button type="text" mat-button (click)="op.toggle($event)"><i style="font-size: 36px;" class="material-icons">account_circle</i></button>
+   <p-overlayPanel my="left top" at="left bottom" #op>
+      <div style="width:100%;">
+        <h2>COST MANAGER</h2>
+        <div>
+          <p style="text-align:center">Member since</p><br>
+          <p style="text-align:center">{{userday}}</p>
+        </div>
+        <div mat-dialog-action>
+          <button class="mat-raised-button mat-primary"(click)="close()">Profile</button>
+          <button class="mat-raised-button mat-primary"(click)="save()">Logout</button>
+        </div>
+      </div>
+    </p-overlayPanel>
+    <div style="width: 10%;"></div>
+    <button mat-button><i style="font-size: 36px;" class="material-icons">help_outline</i></button>
+  </mat-toolbar-row>
+</mat-toolbar>
