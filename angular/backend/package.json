@@ -4,7 +4,7 @@
   "description": "backend of user",
   "main": "app.js",
   "dependencies": {
-    "bcrypt": "^3.0.4",
+    "bcrypt": "^5.0.0",
     "connect-flash": "^0.1.1",
     "connect-session": "^0.0.1",
     "express": "^4.16.4",
